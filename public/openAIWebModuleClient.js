@@ -1,6 +1,6 @@
 // Filename: public/openAIWebModuleClient.js
 async function getGeneratedText(prompt) {
-    const result = await fetch("https://buldingbuisnesses.wixsite.com/_functions/generateText", {
+    const result = await fetch("/generateText", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
