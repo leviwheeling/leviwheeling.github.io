@@ -1,0 +1,2 @@
+# wix-openai-app
+wixopenaiintegration
