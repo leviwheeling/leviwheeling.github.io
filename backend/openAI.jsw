@@ -2,7 +2,7 @@ import {fetch} from 'wix-fetch';
 
 export async function generateText(prompt) {
   const API_ENDPOINT = "https://api.openai.com/v1/engines/davinci-codex/completions";
-  const OPEN_AI_API_KEY = "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";
+  const OPEN_AI_API_KEY = process.env.OPENAI_API_KEY;
 
   const response = await fetch(API_ENDPOINT, {
     method: 'POST',
