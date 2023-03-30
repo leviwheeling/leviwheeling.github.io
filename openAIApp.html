@@ -100,34 +100,35 @@
      </div>
 
     <script>
-      const inputElement = document.getElementById('text-input');
-      const formElement = document.getElementById('my-form');
-      const outputElement = document.getElementById('output-text');
-      const loadingElement = document.getElementById('loading-text');
+  import {getGeneratedText} from 'public/openAIWebModule.js';
+  const inputElement = document.getElementById('text-input');
+  const formElement = document.getElementById('my-form');
+  const outputElement = document.getElementById('output-text');
+  const loadingElement = document.getElementById('loading-text');
 
-                              async function handleSubmit(event) {
-        event.preventDefault();
-        const userInput = inputElement.value;
-        const prompt = `if you were a multi-billionaire entrepreneur make a business name, outline, and strategy, for the following criteria "${userInput}"`;
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const userInput = inputElement.value;
+    const prompt = `if you were a multi-billionaire entrepreneur make a business name, outline, and strategy, for the following criteria "${userInput}"`;
 
-        loadingElement.style.display = "block";
+    loadingElement.style.display = "block";
 
-        const generatedText = await getGeneratedText(prompt);
-        inputElement.value = "";
-        loadingElement.style.display = "none";
+    const generatedText = await getGeneratedText(prompt);
+    inputElement.value = "";
+    loadingElement.style.display = "none";
 
-        typeText(outputElement, generatedText, 0, 120);
-      }
+    typeText(outputElement, generatedText, 0, 120);
+  }
 
-      function typeText(element, text, index, wpm) {
-        if (index < text.length) {
-          element.textContent += text.charAt(index);
-          setTimeout(() => typeText(element, text, index + 1, wpm), 60000 / wpm);
-        }
-      }
+  function typeText(element, text, index, wpm) {
+    if (index < text.length) {
+      element.textContent += text.charAt(index);
+      setTimeout(() => typeText(element, text, index + 1, wpm), 60000 / wpm);
+    }
+  }
 
-      formElement.addEventListener('submit', handleSubmit);
-      document.getElementById("submit-button").addEventListener('click', handleSubmit);
-    </script>
+  formElement.addEventListener('submit', handleSubmit);
+  document.getElementById("submit-button").addEventListener('click', handleSubmit);
+</script>
   </body>
 </html>
