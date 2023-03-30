@@ -1,4 +1,4 @@
-import {generateText} from 'backend/openAI.jsw';
+import {generateText} from './backend/openAI.jsw';
 
 export async function post_generateText(request) {
     const { prompt } = await request.body.json();
