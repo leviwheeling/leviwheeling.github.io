@@ -1,6 +1,6 @@
 // Filename: public/openAIWebModuleClient.js
 async function getGeneratedText(prompt) {
-   const result = await fetch("https://leviwheeling.github.io/backend/generateText.js", {
+   const result = await fetch("/backend/generateText", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",
