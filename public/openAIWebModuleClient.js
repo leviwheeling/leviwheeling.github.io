@@ -1,12 +1,12 @@
 // Filename: public/openAIWebModuleClient.js
 async function getGeneratedText(prompt) {
-   const result = await fetch("/backend/generateText.js", {
+  const result = await fetch("https://openapi-theta.vercel.app/api", {
     method: "POST",
     headers: {
-        "Content-Type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ prompt: prompt }),
-});
+  });
 
     if (result.ok) {
         const data = await result.json();
