@@ -1,6 +1,6 @@
 // Filename: public/openAIWebModuleClient.js
 async function getGeneratedText(prompt) {
-  const result = await fetch("https://openapi-h9c5u0tuv-leviwheeling.vercel.app/api.js", {
+  const result = await fetch("https://openapi-pb7963isf-leviwheeling.vercel.app/api.js", {
     method: "POST",
     mode: "cors",
     headers: {
