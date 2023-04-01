@@ -2,6 +2,7 @@
 async function getGeneratedText(prompt) {
   const result = await fetch("https://openapi-theta.vercel.app/api", {
     method: "POST",
+    mode: "cors",
     headers: {
       "Content-Type": "application/json",
     },
