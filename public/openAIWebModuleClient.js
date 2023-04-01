@@ -13,7 +13,7 @@ async function getGeneratedText(prompt) {
         return data.generatedText;
     } else {
         console.error("Failed to fetch generated text:", result.statusText);
-        return "";
+        return "error";
     }
 }
 
